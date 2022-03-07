@@ -31,32 +31,45 @@ set number relativenumber
 map Q gq
 
 """ Mappings --------------------------------
-
+""" Navigation
 map <leader>f <Plug>(easymotion-s)
 map <leader><leader>f <Action>(FindUsages)
-map <leader><leader>g <Action>(GotoDeclaration)
+map <leader>g <Action>(GotoDeclaration)
+map <leader>j <Action>(MethodDown)
+map <leader>k <Action>(MethodUp)
+map <S-Space> <Action>(GotoNextError)
+
+nnoremap <TAB> <Action> (PreviousTab)
+nnoremap <s-TAB> <Action> (NextTab)
+
+"map <leader>o <Action>(MoveTabRight)
+"map <leader>i <Action>(MoveEditorToOppositeTabGroup)
+"map <leader>k <Action>(NextSplitter)
 
 map <leader>u <Action>(ExpandRegion)
 map <leader>j <Action>(CollapseRegion)
 
+map <leader><leader>o <Action>(OpenFile)
+
+""" Editing
+map <leader><leader>s <Action>(ShowErrorDescription)
+
+""" Refactoring
 map <leader>e <Action>(ExtractMethod)
 map <leader>r <Action>(RenameElement)
+
+""" Multiple Carets & Selections
+
+""" Running & Debugging
 
 map <leader>d <Action>(Debug)
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>c <Action>(Stop)
 
-map <leader><leader>o <Action>(OpenFile)
-
-map <leader>m <Action>(HideAllWindows)
-map <leader>s <Action>(SelectInProjectView)
+""" VCS/Local History
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
 
-map <leader>o <Action>(MoveTabRight)
-map <leader>i <Action>(MoveEditorToOppositeTabGroup)
-map <leader>k <Action>(NextSplitter)
-
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+""" General
+map <leader>m <Action>(HideAllWindows)
+map <leader>s <Action>(SelectInProjectView)
