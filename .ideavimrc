@@ -46,22 +46,21 @@ nnoremap <s-TAB> <Action> (NextTab)
 "map <leader>i <Action>(MoveEditorToOppositeTabGroup)
 "map <leader>k <Action>(NextSplitter)
 
-map <leader>u <Action>(ExpandRegion)
-map <leader>j <Action>(CollapseRegion)
-
-map <leader><leader>o <Action>(OpenFile)
-
 """ Editing
-map <leader><leader>s <Action>(ShowErrorDescription)
+map <leader>e <Action>(ExpandRegion)
+map <leader>c <Action>(CollapseRegion)
+map <leader>s <Action>(ShowErrorDescription)
 
 """ Refactoring
-map <leader>e <Action>(ExtractMethod)
+map <leader>m <Action>(ExtractMethod)
 map <leader>r <Action>(RenameElement)
+map <leader>v <Action>(IntroduceVariable)
+map <leader>n <Action>(Inline)
+
 
 """ Multiple Carets & Selections
 
 """ Running & Debugging
-
 map <leader>d <Action>(Debug)
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>c <Action>(Stop)
@@ -71,5 +70,5 @@ map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 
 """ General
-map <leader>m <Action>(HideAllWindows)
-map <leader>s <Action>(SelectInProjectView)
+map <leader><leader>h <Action>(HideAllWindows)
+map <leader><leader>s <Action>(SelectInProjectView)
