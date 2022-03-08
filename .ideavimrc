@@ -9,7 +9,6 @@ set easymotion
 set textobj-entire
 set ReplaceWithRegister
 
-
 """ Common settings
 set showmode
 set nu
@@ -39,16 +38,15 @@ map <leader>j <Action>(MethodDown)
 map <leader>k <Action>(MethodUp)
 map <S-Space> <Action>(GotoNextError)
 
-nnoremap <TAB> <Action> (PreviousTab)
-nnoremap <s-TAB> <Action> (NextTab)
-
 "map <leader>o <Action>(MoveTabRight)
 "map <leader>i <Action>(MoveEditorToOppositeTabGroup)
 "map <leader>k <Action>(NextSplitter)
 
 """ Editing
 map <leader>e <Action>(ExpandRegion)
+map <leader><leader>e <Action>(ExpandAllRegions)
 map <leader>c <Action>(CollapseRegion)
+map <leader><leader>c <Action>(CollapseAllRegions)
 map <leader>s <Action>(ShowErrorDescription)
 
 """ Refactoring
@@ -57,13 +55,12 @@ map <leader>r <Action>(RenameElement)
 map <leader>v <Action>(IntroduceVariable)
 map <leader>n <Action>(Inline)
 
-
 """ Multiple Carets & Selections
 
 """ Running & Debugging
-map <leader>d <Action>(Debug)
 map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>c <Action>(Stop)
+"map <leader>d <Action>(Debug)
+"map <leader>c <Action>(Stop)
 
 """ VCS/Local History
 map <leader>a <Action>(Annotate)
