@@ -38,9 +38,10 @@ map <leader>j <Action>(MethodDown)
 map <leader>k <Action>(MethodUp)
 map <S-Space> <Action>(GotoNextError)
 
-"map <leader>o <Action>(MoveTabRight)
-"map <leader>i <Action>(MoveEditorToOppositeTabGroup)
-"map <leader>k <Action>(NextSplitter)
+map <leader><Right> <Action>(MoveTabRight)
+map <leader><Left> <Action>(MoveEditorToOppositeTabGroup)
+map <leader><leader><Right> <Action>(NextSplitter)
+map <leader><leader><Left> <Action>(PrevSplitter)
 
 """ Editing
 map <leader>e <Action>(ExpandRegion)
