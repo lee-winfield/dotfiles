@@ -22,17 +22,17 @@ set idearefactormode=keep
 " text scroll if you mouse-click near the start or end of the window.
 set clipboard+=unnamed
 set clipboard+=ideaput
+set number relativenumber
 set scrolloff=5
 set incsearch
-set number relativenumber
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
 """ Mappings --------------------------------
 """ Navigation
-map <leader>f <Plug>(easymotion-s)
-map <leader><leader>f <Action>(FindUsages)
+map <leader><leader>f <Plug>(easymotion-s)
+map <leader>f <Action>(FindUsages)
 map <leader>g <Action>(GotoDeclaration)
 map <leader>j <Action>(MethodDown)
 map <leader>k <Action>(MethodUp)
@@ -57,6 +57,8 @@ map <leader>v <Action>(IntroduceVariable)
 map <leader>n <Action>(Inline)
 
 """ Multiple Carets & Selections
+map <C-g> <Action>(SelectNextOccurrence)
+map <C-M-g> <Action>(SelectAllOccurrences)
 
 """ Running & Debugging
 map <leader>b <Action>(ToggleLineBreakpoint)

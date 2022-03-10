@@ -24,5 +24,8 @@ set so=5
 set incsearch
 set nu
 set showcmd
+set clipboard+=unnamed
+set clipboard+=ideaput
+set number relativenumber
 
 """ Mappings --------------------------------
