@@ -121,6 +121,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$VOLTA_HOME/tools/image/npm/6.14.13/bin:$PATH"
 export PATH="$VOLTA_HOME/tools/image/npm/6.14.8/bin:$PATH"
+export PATH=$PATH:$VOLTA_HOME/.npm-packages/bin
 
 # Custom Env Vars from Keychain
 export MONGO_PROD_READ_USER=$(keychain-environment-variable MONGO_PROD_READ_USER)
