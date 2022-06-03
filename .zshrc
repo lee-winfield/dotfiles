@@ -70,7 +70,12 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+        git
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+        z
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,8 +124,6 @@ function set-keychain-environment-variable () {
 }
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$VOLTA_HOME/tools/image/npm/6.14.13/bin:$PATH"
-export PATH="$VOLTA_HOME/tools/image/npm/6.14.8/bin:$PATH"
 
 # Custom Env Vars from Keychain
 export MONGO_PROD_READ_USER=$(keychain-environment-variable MONGO_PROD_READ_USER)
