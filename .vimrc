@@ -1,6 +1,12 @@
 """ Map leader to space ---------------------
 let mapleader=" "
 
+""" Color Scheme ---------------------------
+colorscheme murphy
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
 """ Plugins  --------------------------------
 call plug#begin('~/.vim/plugged')
  

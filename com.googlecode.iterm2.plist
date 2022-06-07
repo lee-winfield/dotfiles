@@ -832,6 +832,10 @@
 	</array>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SwitchPaneModifier</key>
+	<integer>4</integer>
+	<key>SwitchTabModifier</key>
+	<integer>9</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>kCPKSelectionViewPreferredModeKey</key>
