@@ -98,7 +98,6 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 # Use: keychain-environment-variable SECRET_ENV_VAR
 function keychain-environment-variable () {
     security find-generic-password -w -a ${USER} -D "environment variable" -s "${1}"
