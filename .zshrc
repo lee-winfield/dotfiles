@@ -64,6 +64,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
         git
+	git-prune
         zsh-autosuggestions
         zsh-syntax-highlighting
         z
@@ -114,6 +115,7 @@ function set-keychain-environment-variable () {
     ( [ -n "$1" ] && [ -n "$secret" ] ) || return 1
     security add-generic-password -U -a ${USER} -D "environment variable" -s "${1}" -w "${secret}"
 }
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -126,6 +128,15 @@ export MONGO_PROD_WRITE_PASS=$(keychain-environment-variable MONGO_PROD_WRITE_PA
 
 export MONGO_STAGE_WRITE_USER=$(keychain-environment-variable MONGO_STAGE_WRITE_USER)
 export MONGO_STAGE_WRITE_PASS=$(keychain-environment-variable MONGO_STAGE_WRITE_PASS)
+
+export PG_SANDBOX_READER_HOST=$(keychain-environment-variable PG_SANDBOX_READER_HOST)
+export PG_SANDBOX_HOST=$(keychain-environment-variable PG_SANDBOX_HOST)
+export PG_SANDBOX_WRITE_USER=$(keychain-environment-variable PG_SANDBOX_WRITE_USER)
+export PG_SANDBOX_WRITE_PASS=$(keychain-environment-variable PG_SANDBOX_WRITE_PASS)
+
+export PG_STAGE_WRITE_USER=$(keychain-environment-variable PG_STAGE_WRITE_USER)
+export PG_STAGE_WRITE_PASS=$(keychain-environment-variable PG_STAGE_WRITE_PASS)
+
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # Keypad
@@ -149,3 +160,4 @@ bindkey -s "^[Ol" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
+
