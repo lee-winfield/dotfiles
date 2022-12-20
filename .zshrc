@@ -134,8 +134,15 @@ export PG_SANDBOX_HOST=$(keychain-environment-variable PG_SANDBOX_HOST)
 export PG_SANDBOX_WRITE_USER=$(keychain-environment-variable PG_SANDBOX_WRITE_USER)
 export PG_SANDBOX_WRITE_PASS=$(keychain-environment-variable PG_SANDBOX_WRITE_PASS)
 
-export PG_STAGE_WRITE_USER=$(keychain-environment-variable PG_STAGE_WRITE_USER)
+export PG_STAGE_WRITE_USER=lee_stage_admin
 export PG_STAGE_WRITE_PASS=$(keychain-environment-variable PG_STAGE_WRITE_PASS)
+
+export PG_PROD_WRITE_USER=lee_prod_write
+export PG_PROD_WRITE_PASS=$(keychain-environment-variable PG_PROD_WRITE_PASS)
+export PG_PROD_READ_USER=lee_prod_read
+export PG_PROD_READ_PASS=$(keychain-environment-variable PG_PROD_READ_PASS)
+export PG_PROD_READ_HOST=postgres-prod.cluster-ro-c1wxdp1zab0n.us-east-2.rds.amazonaws.com
+export PG_PROD_WRITE_HOST=postgres-prod.cluster-c1wxdp1zab0n.us-east-2.rds.amazonaws.com
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
@@ -161,3 +168,4 @@ bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
+alias vim="nvim"

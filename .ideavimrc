@@ -5,7 +5,6 @@ set surround
 set multiple-cursors
 set commentary
 set argtextobj
-set easymotion
 set textobj-entire
 set ReplaceWithRegister
 
@@ -31,7 +30,6 @@ map Q gq
 
 """ Mappings --------------------------------
 """ Navigation
-map <leader><leader>f <Plug>(easymotion-s)
 map <leader>f <Action>(FindUsages)
 map <leader>g <Action>(GotoDeclaration)
 map <leader>j <Action>(MethodDown)
