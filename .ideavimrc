@@ -35,6 +35,8 @@ map <leader>g <Action>(GotoDeclaration)
 map <leader>j <Action>(MethodDown)
 map <leader>k <Action>(MethodUp)
 map <S-Space> <Action>(GotoNextError)
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
 map <leader><Right> <Action>(MoveTabRight)
 map <leader><Left> <Action>(MoveEditorToOppositeTabGroup)
