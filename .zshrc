@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -119,30 +119,7 @@ function set-keychain-environment-variable () {
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# Custom Env Vars from Keychain
-export MONGO_PROD_READ_USER=$(keychain-environment-variable MONGO_PROD_READ_USER)
-export MONGO_PROD_READ_PASS=$(keychain-environment-variable MONGO_PROD_READ_PASS)
-
-export MONGO_PROD_WRITE_USER=$(keychain-environment-variable MONGO_PROD_WRITE_USER)
-export MONGO_PROD_WRITE_PASS=$(keychain-environment-variable MONGO_PROD_WRITE_PASS)
-
-export MONGO_STAGE_WRITE_USER=$(keychain-environment-variable MONGO_STAGE_WRITE_USER)
-export MONGO_STAGE_WRITE_PASS=$(keychain-environment-variable MONGO_STAGE_WRITE_PASS)
-
-export PG_SANDBOX_READER_HOST=$(keychain-environment-variable PG_SANDBOX_READER_HOST)
-export PG_SANDBOX_HOST=$(keychain-environment-variable PG_SANDBOX_HOST)
-export PG_SANDBOX_WRITE_USER=$(keychain-environment-variable PG_SANDBOX_WRITE_USER)
-export PG_SANDBOX_WRITE_PASS=$(keychain-environment-variable PG_SANDBOX_WRITE_PASS)
-
-export PG_STAGE_WRITE_USER=lee_stage_admin
-export PG_STAGE_WRITE_PASS=$(keychain-environment-variable PG_STAGE_WRITE_PASS)
-
-export PG_PROD_WRITE_USER=lee_prod_write
-export PG_PROD_WRITE_PASS=$(keychain-environment-variable PG_PROD_WRITE_PASS)
-export PG_PROD_READ_USER=lee_prod_read
-export PG_PROD_READ_PASS=$(keychain-environment-variable PG_PROD_READ_PASS)
-export PG_PROD_READ_HOST=postgres-prod.cluster-ro-c1wxdp1zab0n.us-east-2.rds.amazonaws.com
-export PG_PROD_WRITE_HOST=postgres-prod.cluster-c1wxdp1zab0n.us-east-2.rds.amazonaws.com
+export PATH=/opt/homebrew/bin:$PATH
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
@@ -168,4 +145,47 @@ bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
-alias vim="nvim"
+# Mike's aliases
+alias doy='date +%j'
+
+alias proxy-stop='ps -ef | grep "kubectl port-forward" | grep -v grep | awk '\''{print $2}'\'' | xargs kill'
+
+alias proxy-pg="kubectl port-forward deployment/pg-proxy 6432:5432 &"
+alias proxy-opt="kubectl port-forward deployment/optimization-api 7001:7000 &"
+alias proxy-api="kubectl port-forward deployment/freight-science-api 3001:3000&"
+alias proxy-edi-parser="kubectl port-forward deployment/edi-parser 8081:8080&"
+alias proxy-edi-api="kubectl port-forward deployment/edi-api 9901:8081&"
+alias proxy-score="kubectl port-forward deployment/score 3002:3000 &"
+alias proxy-as400="kubectl port-forward deployment/client-db-proxy 8471:8471 &"
+alias proxy-sqlserver="kubectl port-forward deployment/client-db-proxy 1433:1433 &"
+
+
+
+function change-env {
+    NEW_ENV=$1
+    az account set --subscription "fs-${NEW_ENV}"
+    kubectl config use-context "kube-fs-${NEW_ENV}"
+    proxy-stop
+}
+
+alias env-cur="kubectl config current-context"
+alias env-demo="change-env demo"
+alias env-dev="change-env dev"
+alias env-hir="change-env hirschbach"
+alias env-kivi="change-env kivi"
+alias env-usat="change-env usat"
+alias env-usatruck="change-env usatruck"
+alias env-welc="change-env welc"
+alias env-pti="change-env papertransport"
+alias env-navajo="change-env navajo"
+
+alias acr="az acr login --name acrfreightscience"
+
+function sec-k8s {
+    SECRET=$1
+    kubectl get secret $SECRET -o json | jq -r '.data.password | @base64d '
+}
+
+alias sec-pg="sec-k8s pg"
+alias sec-sb="sec-k8s az-servicebus-con"
+alias sec-keycloak="sec-k8s keycloak"
