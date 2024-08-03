@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -98,6 +98,7 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi="nvim"
 
 # Use: keychain-environment-variable SECRET_ENV_VAR
 function keychain-environment-variable () {
@@ -145,47 +146,14 @@ bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
-# Mike's aliases
-alias doy='date +%j'
+alias kc='kubectl'
 
-alias proxy-stop='ps -ef | grep "kubectl port-forward" | grep -v grep | awk '\''{print $2}'\'' | xargs kill'
+source ~/.localrc.sh
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+#export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
-alias proxy-pg="kubectl port-forward deployment/pg-proxy 6432:5432 &"
-alias proxy-opt="kubectl port-forward deployment/optimization-api 7001:7000 &"
-alias proxy-api="kubectl port-forward deployment/freight-science-api 3001:3000&"
-alias proxy-edi-parser="kubectl port-forward deployment/edi-parser 8081:8080&"
-alias proxy-edi-api="kubectl port-forward deployment/edi-api 9901:8081&"
-alias proxy-score="kubectl port-forward deployment/score 3002:3000 &"
-alias proxy-as400="kubectl port-forward deployment/client-db-proxy 8471:8471 &"
-alias proxy-sqlserver="kubectl port-forward deployment/client-db-proxy 1433:1433 &"
+#export JAVA_HOME=/opt/homebrew/opt/openjdk@20
 
-
-
-function change-env {
-    NEW_ENV=$1
-    az account set --subscription "fs-${NEW_ENV}"
-    kubectl config use-context "kube-fs-${NEW_ENV}"
-    proxy-stop
-}
-
-alias env-cur="kubectl config current-context"
-alias env-demo="change-env demo"
-alias env-dev="change-env dev"
-alias env-hir="change-env hirschbach"
-alias env-kivi="change-env kivi"
-alias env-usat="change-env usat"
-alias env-usatruck="change-env usatruck"
-alias env-welc="change-env welc"
-alias env-pti="change-env papertransport"
-alias env-navajo="change-env navajo"
-
-alias acr="az acr login --name acrfreightscience"
-
-function sec-k8s {
-    SECRET=$1
-    kubectl get secret $SECRET -o json | jq -r '.data.password | @base64d '
-}
-
-alias sec-pg="sec-k8s pg"
-alias sec-sb="sec-k8s az-servicebus-con"
-alias sec-keycloak="sec-k8s keycloak"
+alias fs='/opt/homebrew/bin/fs'
+#export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+#eval "$(jenv init -)"
