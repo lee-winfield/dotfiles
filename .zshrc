@@ -148,7 +148,7 @@ bindkey -s "^[Oo" "/"
 
 alias kc='kubectl'
 
-source ~/.localrc.sh
+[ -f ~/.localrc.sh ] && source ~/.localrc.sh
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 #export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
