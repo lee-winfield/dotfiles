@@ -150,10 +150,5 @@ alias kc='kubectl'
 
 [ -f ~/.localrc.sh ] && source ~/.localrc.sh
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-#export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-
-#export JAVA_HOME=/opt/homebrew/opt/openjdk@20
-
 alias fs='/opt/homebrew/bin/fs'
-#export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-#eval "$(jenv init -)"
+
