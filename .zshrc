@@ -152,3 +152,6 @@ alias kc='kubectl'
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 alias fs='/opt/homebrew/bin/fs'
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
