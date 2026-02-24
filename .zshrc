@@ -123,6 +123,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+idea () { VSCODE_CWD="$PWD" open -n -b "com.jetbrains.intellij" --args $* ;}
 
 # Keypad
 # 0 . Enter
@@ -148,10 +149,9 @@ bindkey -s "^[Oo" "/"
 
 alias kc='kubectl'
 
-[ -f ~/.localrc.sh ] && source ~/.localrc.sh
+[ -f ~/.localrc ] && source ~/.localrc
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 alias fs='/opt/homebrew/bin/fs'
-
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

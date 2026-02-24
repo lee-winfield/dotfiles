@@ -100,7 +100,7 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
     # Application launchers
-    alt-enter = '''exec-and-forget osascript -e '
+    alt-shift-enter = '''exec-and-forget osascript -e '
 tell application "iTerm"
     create window with default profile
     activate
@@ -276,11 +276,3 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.hnc.Discord'
 run = 'move-node-to-workspace M'
 
-# Workspace-to-monitor assignments for dual monitor support
-[workspace-to-monitor-force-assignment]
-B = 'main'
-C = 'main'
-T = 'main'
-F = 'main'
-M = 'secondary'
-S = 'secondary'
