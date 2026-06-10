@@ -155,3 +155,22 @@ alias fs='/opt/homebrew/bin/fs'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH="$HOME/bin:$PATH"
+
+function hiscan() {
+	fc -ln 1 | rg "$1" | sort -u
+}
+
+function parseToken() {
+	echo "$TOKEN" | cut -d'.' -f2 | python3 -c "
+import sys, base64
+s = sys.stdin.read().strip()
+s += '=' * (4 - len(s) % 4)
+sys.stdout.buffer.write(base64.urlsafe_b64decode(s))
+" | jq
+}
+
+function copyToken() {
+	echo "$TOKEN" | pbcopy
+}
+
