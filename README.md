@@ -36,15 +36,21 @@ git clone https://github.com/Seinh/git-prune.git ${ZSH_CUSTOM:-~/.oh-my-zsh/cust
 ### 3. Symlink Configuration Files
 
 ```bash
+mkdir -p ~/.config/nvim
+ln -sf "$(pwd)/init.lua" ~/.config/nvim/init.lua
+ln -sf "$(pwd)/vscode.lua" ~/.config/nvim/vscode.lua
 ln -sf "$(pwd)/.ideavimrc" ~/
 ln -sf "$(pwd)/.zshrc" ~/
-ln -sf "$(pwd)/init.lua" ~/
 ln -sf "$(pwd)/.aerospace.toml" ~/
+
+# Remove legacy home-dir Neovim symlink if present
+rm -f ~/init.lua
 ```
 
 ## What's Included
 
 - **init.lua** - Neovim configuration based on Kickstart.nvim with LSP support, Telescope fuzzy finder, Treesitter syntax highlighting, and autocompletion
+- **vscode.lua** - Cursor / VS Code Neovim keymaps (IdeaVim-style), loaded only when running inside vscode-neovim
 - **.zshrc** - Zsh configuration with oh-my-zsh plugins, custom functions for macOS keychain integration, and development tool paths (Volta, Java)
 - **.aerospace.toml** - AeroSpace window manager configuration with i3-like keybindings for tiling window management
 - **.ideavimrc** - Vim emulation configuration for JetBrains IDEs with custom keybindings

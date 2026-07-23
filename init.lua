@@ -90,6 +90,12 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Cursor / VS Code Neovim: load IDE mappings only (skip Kickstart plugins)
+if vim.g.vscode then
+  dofile(vim.fn.stdpath('config') .. '/vscode.lua')
+  return
+end
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 

@@ -8,10 +8,14 @@ This is a personal dotfiles repository containing configuration files for develo
 
 ## Installation and Setup
 
-To deploy the dotfiles, run the command from the README:
+To deploy the dotfiles, run the commands from the README:
 
 ```bash
-ln -sf "$(pwd)/.ideavimrc" ~/ && ln -sf "$(pwd)/.zshrc" ~/ && ln -sf "$(pwd)/init.lua" ~/
+mkdir -p ~/.config/nvim
+ln -sf "$(pwd)/init.lua" ~/.config/nvim/init.lua
+ln -sf "$(pwd)/vscode.lua" ~/.config/nvim/vscode.lua
+ln -sf "$(pwd)/.ideavimrc" ~/ && ln -sf "$(pwd)/.zshrc" ~/ && ln -sf "$(pwd)/.aerospace.toml" ~/
+rm -f ~/init.lua
 ```
 
 ### Required Dependencies
@@ -61,6 +65,10 @@ The Neovim configuration is based on **Kickstart.nvim** - a minimal, well-docume
 - `:Lazy update` - Update plugins
 - `:Mason` - Manage LSP servers and tools
 - `:checkhealth` - Diagnose configuration issues
+
+### Cursor / VS Code Neovim (vscode.lua)
+
+When running inside the vscode-neovim extension (`vim.g.vscode`), [`init.lua`](init.lua) loads [`vscode.lua`](vscode.lua) and returns early so Kickstart plugins are skipped. Symlink both files into `~/.config/nvim/`.
 
 ### Zsh Configuration (.zshrc)
 
