@@ -42,6 +42,9 @@ ln -sf "$(pwd)/vscode.lua" ~/.config/nvim/vscode.lua
 ln -sf "$(pwd)/.ideavimrc" ~/
 ln -sf "$(pwd)/.zshrc" ~/
 ln -sf "$(pwd)/.aerospace.toml" ~/
+ln -sf "$(pwd)/keybindings.json" ~/Library/Application\ Support/Cursor/User/keybindings.json
+ln -sf "$(pwd)/settings.json" ~/Library/Application\ Support/Cursor/User/settings.json
+
 
 # Remove legacy home-dir Neovim symlink if present
 rm -f ~/init.lua
