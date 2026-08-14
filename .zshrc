@@ -149,7 +149,7 @@ bindkey -s "^[Oo" "/"
 
 alias kc='kubectl'
 
-[ -f ~/.localrc ] && source ~/.localrc
+[ -f ~/.localrc.sh ] && source ~/.localrc.sh
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 alias fs='/opt/homebrew/bin/fs'
 

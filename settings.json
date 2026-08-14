@@ -1,0 +1,114 @@
+{
+    "window.autoDetectColorScheme": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#dd0531"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#61dafb"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Svelte Orange",
+            "value": "#ff3d00"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "files.autoSave": "onFocusChange",
+    "workbench.editor.enablePreview": false,
+    "cursor.general.glassShowWarningNotifications": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.composer.codeBlockWordWrap": true,
+    "pgsql.serverGroups": [
+        {
+            "name": "Servers",
+            "id": "2A309D0C-78C2-41C4-8790-DE37DF7D89FA",
+            "isDefault": true
+        },
+        {
+            "id": "62DCB1BB-5D10-46B5-842B-AFED4AC6EE41",
+            "name": "product-catalog",
+            "description": ""
+        }
+    ],
+    "pgsql.connections": [
+        {
+            "id": "0D93A973-C65C-4201-BC5B-5D5BB1EDBACF",
+            "profileName": "dev",
+            "groupId": "62DCB1BB-5D10-46B5-842B-AFED4AC6EE41",
+            "server": "localhost",
+            "port": "9010",
+            "database": "postgres",
+            "authenticationType": "SqlLogin",
+            "user": "Eg5ofN6BptAJiFz6",
+            "password": "",
+            "sslmode": "prefer",
+            "connectTimeout": 10,
+            "expiresOn": 0,
+            "sshPassword": ""
+        },
+        {
+            "id": "9939327E-6F44-450B-A956-E879CC0747EB",
+            "groupId": "62DCB1BB-5D10-46B5-842B-AFED4AC6EE41",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 10,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "sshSavePassword": true,
+            "savePassword": true,
+            "sslRootCertMode": "none",
+            "profileName": "local",
+            "server": "localhost",
+            "port": "5433",
+            "database": "product_catalog",
+            "user": "product_catalog_admin",
+            "password": "",
+            "sshPassword": "",
+            "displayName": "local",
+            "expiresOn": 0
+        }
+    ],
+    "git.autofetch": true,
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "fileHistory": false,
+        "repositories": true,
+        "searchAndCompare": true,
+        "launchpad": false
+    },
+    "editor.accessibilitySupport": "off"
+}
