@@ -110,5 +110,8 @@
         "searchAndCompare": true,
         "launchpad": false
     },
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:claude-opus-4.8"
 }
