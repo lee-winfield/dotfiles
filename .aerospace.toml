@@ -253,6 +253,15 @@ if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+if.window-title-regex-substring = 'Cursor Agents'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92' # Cursor IDE
+run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij'
 run = 'move-node-to-workspace C'
 
