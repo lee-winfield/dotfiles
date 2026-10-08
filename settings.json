@@ -1,4 +1,5 @@
 {
+    "workbench.editor.closeOnFileDelete": true,
     "window.autoDetectColorScheme": true,
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
@@ -56,6 +57,11 @@
             "id": "62DCB1BB-5D10-46B5-842B-AFED4AC6EE41",
             "name": "product-catalog",
             "description": ""
+        },
+        {
+            "id": "3505E189-3084-4ABE-A2C7-29457784AD5D",
+            "name": "seed-catalog",
+            "description": ""
         }
     ],
     "pgsql.connections": [
@@ -71,6 +77,47 @@
             "password": "",
             "sslmode": "prefer",
             "connectTimeout": 10,
+            "expiresOn": 0,
+            "sshPassword": ""
+        },
+        {
+            "id": "4CD3AE59-D09C-4413-AA06-2D5E9609744C",
+            "groupId": "3505E189-3084-4ABE-A2C7-29457784AD5D",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "sshSavePassword": true,
+            "savePassword": true,
+            "sslRootCertMode": "none",
+            "server": "localhost",
+            "user": "postgres",
+            "password": "",
+            "database": "internal_seed_catalog",
+            "profileName": "local-seed-catalog",
+            "port": "5435",
+            "sshPassword": "",
+            "displayName": "local2",
+            "expiresOn": 0
+        },
+        {
+            "id": "BED7EC35-E878-4D56-9184-6E215C770E61",
+            "groupId": "2A309D0C-78C2-41C4-8790-DE37DF7D89FA",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "sshSavePassword": true,
+            "savePassword": true,
+            "sslRootCertMode": "none",
+            "server": "localhost",
+            "password": "",
+            "user": "Eg5ofN6BptAJiFz6",
+            "profileName": "prod-product-catalog",
+            "database": "postgres",
+            "port": "9012",
             "expiresOn": 0,
             "sshPassword": ""
         },
@@ -93,7 +140,28 @@
             "password": "",
             "sshPassword": "",
             "displayName": "local",
-            "expiresOn": 0
+            "expiresOn": 0,
+            "profileSource": 0
+        },
+        {
+            "id": "B5C5EBBC-209A-4E4A-B0E5-17D8E45693F9",
+            "groupId": "62DCB1BB-5D10-46B5-842B-AFED4AC6EE41",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "sshSavePassword": true,
+            "savePassword": true,
+            "sslRootCertMode": "none",
+            "server": "localhost",
+            "user": "Eg5ofN6BptAJiFz6",
+            "database": "postgres",
+            "profileName": "prod",
+            "password": "",
+            "port": "9012",
+            "expiresOn": 0,
+            "sshPassword": ""
         }
     ],
     "git.autofetch": true,
@@ -112,6 +180,28 @@
     },
     "editor.accessibilitySupport": "off",
     "diffEditor.ignoreTrimWhitespace": false,
-    "gitlens.ai.model": "vscode",
-    "gitlens.ai.vscode.model": "copilot:claude-opus-4.8"
+    "debug.onTaskErrors": "debugAnyway",
+    "accessibility.signals.chatResponseReceived": {
+        "sound": "on"
+    },
+    "accessibility.signals.chatUserActionRequired": {
+        "sound": "on"
+    },
+    "cSpell.userWords": [
+        "Aliaser",
+        "Autopurge",
+        "bayerit",
+        "Germplasm",
+        "Germplasms",
+        "Ggid",
+        "insertable",
+        "KSUID",
+        "Remappings",
+        "segpop"
+    ],
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll.eslint": "explicit" 
+    }
 }
